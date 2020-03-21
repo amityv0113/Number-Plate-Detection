@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald|Roboto:300,400|Righteous|Pathway+Gothic+One");
+
+* {
+    box-sizing: border-box;
+    // border: 1px solid black; 
+    font-family: 'Roboto';
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+
+.nav_bar
+{
+   background-color: rgba(0, 0, 0, 0.3);
+   
+}
+.text
+{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+.pad_one
+{
+    padding-bottom: 50px;
+}
+#three_major_system
+{
+    font-size: 25px;
+    
+}
+
+.three_major_system_container
+{
+    padding-top: 10%;
+}
+
+.our_product
+{
+    padding-top: 10%;
+}
+.img_of_mode
+{
+    // margin-left:40%;
+    margin-right:70%;
+
+}

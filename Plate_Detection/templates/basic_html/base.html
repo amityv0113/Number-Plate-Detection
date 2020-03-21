@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Plate Detection</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="for_intern_3.scss" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<body>
+
+    <nav class="navbar navbar-fixed-top">
+        <div class="container-fluid" style="background-color:#000000e3; ">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{% url 'home_page' %}">Home</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class=""><a href="{% url 'introduction_page' %}">Introduction</a></li>
+                <li><a href="{% url 'basic_app:algorithm_page' %}">Algorithm</a></li>
+                <li><a href="{% url 'basic_app:machine_learing' %}">Machine Learning</a></li>
+                <li><a href="{% url 'basic_app:more' %}">About Us</a></li>
+                <li><a href="{% url 'basic_app:register' %}">Register</a></li>
+            </ul>
+            <div class="sign_up_and_search" style="padding-left: 65%;">
+                <form class="navbar-form navbar-left" action="">
+                    <div class="form-group" style="margin-left:px;">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default" style="margin-left:5px">Submit</button>
+
+                    {% if user.is_authenticated %}
+                        <button type="submit" class="btn btn-default" style="margin-left:5px"><a href="{% url 'logout' %}">Logout</a> </button>
+                    {% else %}
+
+                        <button type="submit" class="btn btn-default" style="margin-left:5px"><a href="{% url 'user_login' %}">Login</a></button>
+
+                    {% endif %}
+
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="">
+
+        {% block body_block %}
+        <header class="w3-container  w3-center" style="padding:300px; 
+
+            background-size: 100% 100%;
+            background-position: center;
+            background: linear-gradient(180deg, rgba(30,206,230,0) 0%, rgba(173, 190, 182, 0.671) 100%);">
+
+            <h1 class="w3-margin w3-jumbo">License Plate Detection</h1>
+            <p class="w3-xlarge">Using Convolutional neural network</p>
+            <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Code</button>
+        </header>
+
+        <!-- w3-button w3-black w3-padding-large w3-large w3-margin-top -->
+        <!-- First Grid -->
+        <div class="w3-row-padding w3-padding-64 w3-container">
+            <div class="w3-content">
+                <div class="w3-twothird">
+                    <h1 style="padding-bottom: 12%;">INTRODUCTION</h1>
+                    <p class="text" style="font-family:'Roboto',sans-serif; font-size:16px;
+                    text-align: left; color: rgba(0,0,0,.84);">
+                        As India goes through a phase of modernization and infrastructure
+                        development in the upcoming decade we see significant opportunities
+                        for the various government entities municipalities and businesses to
+                        embrace ANPR.Unlike other countries India with its one billion population has a
+                        unique set of need for ANPR. The main use of ANPR is on highway
+                        monitoring parking management and neighborhood law enforcement security.
+                    </p>
+                    <!-- w3-text-grey -->
+                    <!-- w3-padding-32 -->
+                    <p class="text" style="font-family:'Roboto',sans-serif; font-size:16px;
+                    text-align: left; color: rgba(0,0,0,.84);">
+                        In India there is one death in every 4 minutes with most of them
+                        occurring due to over speeding. ANPR is used to monitor the vehicles
+                        average speed and can identify the vehicle that exceed the speed limit.
+
+                    </p>
+                    <p class="text" style="font-family:'Roboto',sans-serif; font-size:16px;
+                    text-align: left; color: rgba(0,0,0,.84);">
+                        In this case a fine ticket can be automatically generated by calculating the
+                        distance between the two cameras. This helps to maintain law and order
+                        which, in turn, can minimize the number of road casualties. It can support
+                        a cloud-based system pre-book and pre-pay platform for parking.
+                    </p>
+
+
+                </div>
+
+                <!-- <div class="w3-third w3-center">
+
+                <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
+                </div> -->
+            </div>
+        </div>
+        <div class="w3-row-padding  w3-padding-64 w3-container">
+            <div class="w3-content">
+
+                <div class="">
+                    <h1 class="pad_one">OJECTIVE</h1>
+                    <p class="text" style="font-family:'Roboto',sans-serif; font-size:16px;
+                    text-align: left; color: rgba(0,0,0,.84); padding-top:5%">
+                        The main objective of this project is to design an efficient automatic
+                        authorized vehicle identification system using the vehicle number
+                        plate. The system is implemented on the entrance for security
+                        control of a highly restricted area like Military Zones, or area around
+                        top Government offices, e.g., Parliament, Supreme Court etc. </p>
+                    <p class="text" style="font-family:'Roboto',sans-serif; font-size:16px;
+                    text-align: left; color: rgba(0,0,0,.84);">
+                        The developed system first detects the vehicle and then captures the
+                        vehicle image. Vehicle number plate region is extracted using the
+                        image segmentation in an image. Optical character recognition
+                        technique is used for the character recognition. This system has been
+                        implemented in many countries like U.S.A, Europe, Korea, and few
+                        others. However, for License plate recognition system to work in
+                        Indian Roads, it should have the capability to identify the License
+                        plate in dynamic conditions.
+                    </p>
+                    <p class="text" style="font-family:'Roboto',sans-serif; font-size:16px;
+                    text-align: left; color: rgba(0,0,0,.84);">
+                        The proposed system provides a
+                        foundation for implementing automatic number plate recognition
+                        system using image processing which can greatly enhance the
+                        capability of police to detect criminal activities that involves the use
+                        of motor vehicles. It also reduce the traffic near the toll checkpoints
+                        areas.
+                    </p>
+                </div>
+                <div class="three_major_system_container">
+                    <p id="three_major_system" class="text" style="font-family:'Roboto',sans-serif; font-size:16px;
+                    text-align: left; color: rgba(0,0,0,.84);">The proposed system has three major stages:</p>
+                    <ol>
+                        <li class="text">License Plate Detection using OpenCV</li>
+                        <li class="text">Character Segmentation</li>
+                        <li class="text">Character Recognition using Convolutional Neural Network (CNN)</li>
+                    </ol>
+                </div>
+                <div class="">
+                    <p style="font-family:'Roboto',sans-serif; font-size:16px;
+                    text-align: left; color: rgba(0,0,0,.84);">
+
+                        Our Product can be implemented on the entrance for security control
+                        of a highly restricted area like Military Zones, or area around top
+                        Government offices, e.g., Parliament, Supreme Court, etc.The main
+                        objective of our project is to design a low cost and high accuracy
+                        automatic authorized vehicle identification system using the vehicle
+                        number plate which can be used in dynamic conditions such as in
+                        India.The efficiency of most of the plate recognition systems is poor
+                        particularly for Indian License Plates which are generally highly
+                        complex in localizing the plate area, segmenting the characters within
+                        the license plate and the character recognition of segmented
+                        characters as a valid license plate number (a valid sequence ofASCII characters as plate number
+                        to be stored
+                        in a database for later
+                        use).
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Second Grid -->
+        <div class="w3-row-padding  w3-padding-64 w3-container">
+            <div class="w3-content">
+                <div class="w3-third w3-center">
+                    <div class="w3-padding-64 w3-text-red w3-margin-right style">
+
+                    </div>
+                </div>
+
+                <div class="w3-twothird">
+                    <h1>License Plate Detection</h1>
+                    <p class="text" style="font-family:'Roboto',sans-serif; font-size:16px;
+                    text-align: left; color: rgba(0,0,0,.84);">
+                        We have to resize the captured image in to Required Size and then
+                        grayscale it resizing help us to avoid any problems with bigger resolution
+                        images, make sure the number plate still remains in the frame after
+                        resizing. Gray scaling is common in all image processing steps. This
+                        speeds up other following process since we no longer have to deal with
+                        the many color details when processing an image. The image would be
+                        transformed in two colours black and White. Every image will have useful
+                        and useless information, in this case for us only the license plate is the
+                        useful information the rest are pretty much useless for our program. This
+                        useless information is called noise. Normally using bilateral filter it will
+                        remove unwanted details from image. The next step is to perform edge
+                        detection and then start looking for contours on our image. Once the
+                        counters have been detected we sort them from big to small and consider
+                        only the first 10 results ignoring the others. In our image the counter could
+                        be anything that has a closed surface but of all the obtained results the
+                        license plate number will also be there since it is also a closed surface
+                    </p>
+                    <p class="text" style="font-family:'Roboto',sans-serif; font-size:16px;
+                    text-align: left; color: rgba(0,0,0,.84);">
+                        To filter the license plate image among the obtained results, we will loop
+                        though all the results and check which has a rectangle shape contour with
+                        four sides and closed figure. Since a license plate would definitely be a
+                        rectangle four sided figure
+                    </p>
+
+                </div>
+                <div class="img_of_mode">
+                    <img src="abc.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+
+
+        {% endblock %}
+
+    </div>
+
+
+
+
+    <!-- Footer -->
+    <footer class="w3-container w3-black w3-center w3-opacity " style="padding-top:5% ; padding-bottom:5% ">
+
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+
+    </footer>
+
+    <script>
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function myFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+{% extends "basic_html/base.html" %}
+
+{% block body_block %}
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+    }
+
+    html {
+        box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+
+    .column {
+        float: left;
+        width: 33.3%;
+        margin-bottom: 16px;
+        padding: 0 8px;
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        margin: 8px;
+    }
+
+    .about-section {
+        padding-top: 30%;
+        padding-bottom: 40%;
+        
+        text-align: center;
+        background-color: #474e5d;
+        color: white;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .container::after,
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+        
+    }
+
+    .title {
+        color: grey;
+    }
+
+    .button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 29%;
+    }
+
+    .button:hover {
+        background-color: #555;
+    }
+
+    @media screen and (max-width: 650px) {
+        .column {
+            width: 100%;
+            display: block;
+        }
+    }
+</style>
+<div class="about-section">
+    <h1>About Us </h1>
+    <p>Some text about who we are and what we do.</p>
+    <p>Resize the browser window to see that this page is responsive by the way.</p>
+</div>
+
+<h2 style="text-align:center; padding-top:5%">Our Team</h2>
+<div class="row" style="padding:5% ;padding-bottom:15%">
+    <div class="column">
+        <div class="card">
+            <img src="https://scontent.fslv1-2.fna.fbcdn.net/v/t1.0-9/74163967_1260283540817627_8337173683571261440_n.jpg?_nc_cat=104&_nc_sid=09cbfe&_nc_ohc=JrjndQkQVDoAX9iH3Ru&_nc_ht=scontent.fslv1-2.fna&oh=542946a1eb41bbf8bddd60044ce58abb&oe=5E9305BD" alt="Jane" style="width:100%">
+            <div class="container">
+                <h2>Anand Ranjan</h2>
+                <p class="title">CEO & Founder</p>
+                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                <p>jane@example.com</p>
+                <p><button class="button">Contact</button></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+            <img src="https://scontent.fslv1-2.fna.fbcdn.net/v/t1.0-9/81659442_2135986609837373_8129132644643373056_n.jpg?_nc_cat=111&_nc_sid=09cbfe&_nc_ohc=GIPYf4iES1AAX8TvmDN&_nc_ht=scontent.fslv1-2.fna&oh=00b5c72452818b61e2ded795d5b00ebe&oe=5E93182F" alt="Mike" style="width:100%">
+            <div class="container">
+                <h2>Kushagra Pal</h2>
+                <p class="title">Art Director</p>
+                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                <p>mike@example.com</p>
+                <p><button class="button">Contact</button></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+            <img src="https://scontent.fslv1-1.fna.fbcdn.net/v/t1.0-9/p960x960/68736466_1555156671292011_3841722287766110208_o.jpg?_nc_cat=102&_nc_sid=09cbfe&_nc_ohc=KfpnqPNbSnoAX9c1BWa&_nc_ht=scontent.fslv1-1.fna&_nc_tp=6&oh=b9b7795db5c299193bead1ca7d825ce7&oe=5E8FFA7A" alt="John" style="width:100%">
+            <div class="container">
+                <h2>Amit Yadav</h2>
+                <p class="title">Designer</p>
+                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                <p>john@example.com</p>
+                <p><button class="button">Contact</button></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

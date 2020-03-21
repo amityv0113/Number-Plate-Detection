@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+{% extends 'basic_html/base.html' %}
+
+{% block body_block %}
+
+<div class="jumbotron">
+
+    <!-- <form action="{% url 'user_login' %}" method="post">
+
+        {% csrf_token %}
+
+        <label for="username">UserName</label>
+        <input type="text" name="username" placeholder="Enter UserName">
+
+        <label for="password">Password</label>
+        <input type="text" name="password">
+        <input type="Submit" class="btn btn-primary" value="login">
+
+
+    </form>  -->
+    <div class="container" style="padding-top:12%; padding-bottom:10%">
+        <h2>LOGIN PAGE</h2>
+        <h3></h3>
+        <form action="{% url 'user_login' %}" method="post" >
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">UserName</label>
+                <input type="text" placeholder="UserName" name="username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" placeholder="Enter password" name="password">
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="remember"> Remember me</label>
+            </div>
+
+            <input type="Submit" class="btn btn-primary" value="login">
+            <!-- <input type="submit" name="" value="Login"> -->
+        </form>
+    </div> 
+
+</div>
+
+{% endblock %}
