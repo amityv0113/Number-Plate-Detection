@@ -1,4 +1,5 @@
-# Number-Plate-Detection
+# Number-Plate-Detection Web Portal
+
 
 The main objective of this project is to design an efficient automatic authorized vehicle identification system using the vehicle number
 plate. The system is implemented on the entrance for security control of a highly restricted area like Military Zones, or area around 
