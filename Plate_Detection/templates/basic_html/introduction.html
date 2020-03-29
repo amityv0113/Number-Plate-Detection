@@ -1,11 +1,188 @@
 <!DOCTYPE html>
+<html>
 
-{% extends "basic_html/base.html" %}
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            position: relative;
+        }
 
-    {% block body_block %}
-        <h1>welcome to introduction</h1>
-        <h2>this is example of inheritance</h2>
-    
-    
-    {% endblock %}
 
+        #section1 {
+            padding-bottom: 20%;
+            padding-top: 10%;
+            height: 500px;
+            color: #fff;
+            background-color: #1E88E5;
+        }
+
+        #section2 {
+            padding-bottom: 20%;
+            padding-top: 10%;
+            color: #fff;
+            background-color: #673ab7;
+        }
+
+        #section3 {
+            padding-bottom: 20%;
+            padding-top: 10%;
+            color: #fff;
+            background-color: #009688;
+            ;
+        }
+
+        #section4 {
+            padding-bottom: 20%;
+            padding-top: 10%;
+            color: #fff;
+            background-color: #006b96;
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#section1">Introduction</a></li>
+                        <li><a href="#section2">Project Abstract</a></li>
+                        <li><a href="#section3">Technical Details</a></li>
+                        <li><a href="#section4">More</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="section1" class="container-fluid" style="padding-bottom: 40%;">
+        <h1 style="padding-left:35%; padding-right:35%; padding-bottom:5%; padding-top:8%">INTRODUCTION</h1>
+        <div class="well well-sm" style="margin-left: 27%; margin-right:35%; padding-left:2%; padding-right:2%"><a
+                href="{% url 'introduction_page' %}" style=" text-decoration: none;">
+                <h3>License Plate Detection & Recognition</h3>
+            </a></div>
+
+
+    </div>
+    <div id="section2" class="container-fluid" style="padding-bottom: 20%;">
+        <h1 style="padding-left:35%; padding-right:35%; padding-bottom:5%">Project Abstract</h1>
+        <p style="font-size:large; padding-left:5%; padding-right:5%">The main objective of this project is to design an
+            efficient automatic
+            authorized vehicle identification system using the vehicle number
+            plate. The system is implemented on the entrance for security
+            control of a highly restricted area like Military Zones or area around
+            top Government offices e.g Parliament, Supreme Court </p>
+        <p style="font-size:large; padding-left:5%; padding-right:5%">The
+            developed system first detects the vehicle and then captures the
+            vehicle image. Vehicle number plate region is extracted using the
+            image segmentation in an image. Optical character recognition
+            technique is used for the character recognition. This system has been
+            implemented in many countries like U.S.A, Europe, Korea, and few
+            others. However, for License plate recognition system to work in
+            Indian Roads, it should have the capability to identify the License
+            plate in dynamic conditions </p>
+        <p style="font-size:large; padding-left:5%; padding-right:5%"> The proposed system provides a
+            foundation for implementing automatic number plate recognition
+            system using image processing which can greatly enhance the
+            capability of police to detect criminal activities that involves the use
+            of motor vehicles. It also reduce the traffic near the toll checkpoints
+            areas</p>
+        <p style="font-size:x-large; padding-left:5%; padding-right:5%">The proposed system has three major stages :</p>
+        <ul style="font-size:large; padding-left:7%; padding-right:5%">
+            <li>License Plate Detection using OpenCV</li>
+            <li>Character Segmentation</li>
+            <li>Character Recognition using Convolutional Neural Network
+                (CNN)</li>
+        </ul>
+
+
+    </div>
+    <div id="section3" class="container-fluid" style="padding-bottom: 20%;">
+        <h1 style="padding-left:35%; padding-right:35%; padding-bottom:5%">Technical Details</h1>
+        <h2 style="padding-left: 5%; padding-bottom:2%; padding-top:3%">License Plate Detection :</h2>
+        <p style="font-size:large; padding-left:5%; padding-right:5%">We have to resize the captured image in to
+            Required Size and then
+            grayscale it resizing help us to avoid any problems with bigger resolution
+            images, make sure the number plate still remains in the frame after
+            resizing. Gray scaling is common in all image processing steps. This
+            speeds up other following process since we no longer have to deal with
+            the many color details when processing an image. The image would be
+            transformed in two colours black and White. Every image will have useful
+            and useless information, in this case for us only the license plate is the
+            useful information the rest are pretty much useless for our program. This
+            useless information is called noise. Normally using bilateral filter it will
+            remove unwanted details from image. The next step is to perform edge
+            detection and then start looking for contours on our image. Once the
+            counters have been detected we sort them from big to small and consider
+            only the first 10 results ignoring the others. In our image the counter could
+            be anything that has a closed surface but of all the obtained results the
+            license plate number will also be there since it is also a closed surface.</p>
+        <p style="font-size:large; padding-left:5%; padding-right:5%">To filter the license plate image among the
+            obtained results, we will loop
+            though all the results and check which has a rectangle shape contour with
+            four sides and closed figure. Since a license plate would definitely be a
+            rectangle four sided figure.
+        </p>
+        <h2 style="padding-left: 5%; padding-bottom:2%; padding-top:3%">Character Segmentation & Feature Extraction :
+        </h2>
+        <p style="font-size:large; padding-left:5%; padding-right:5%"> Character segmentation is an operation that seeks
+            to decompose an image
+            of a sequence of charac- ters into subimages of individual symbols. It is
+            one of the decision processes in a system for optical character recognition
+            (OCR)</p>
+        <p style="font-size:large; padding-left:5%; padding-right:5%">In feature extraction stage each character is
+            represented as a feature
+            vector which becomes its identity. The major goal of feature extraction is to extract a set of features,
+            which maximizes the recognition rate with the
+            least amount of elements.</p>
+        <h2 style="padding-left: 5%; padding-bottom:2%; padding-top:3%">Character Recognition Using CNN :</h2>
+        <p style="font-size:large; padding-left:5%; padding-right:5%">In order to predict the character present in
+            Number plate we use Machine
+            learning Technique called CNN (Convolutional Neural Network). In deep
+            learning, a convolutional neural network is a class of deep neural
+            networks, most commonly applied to analyzing image.</p>
+
+    </div>
+    <div id="section4" class="container-fluid" style="padding-bottom: 30%;">
+        <h1 style="padding-left:35%; padding-right:35%; padding-bottom:5%">MORE</h1>
+
+        <div class="well well-sm" style="margin-left: 27%; margin-right:35%; padding-left:2%; padding-right:2%"><a
+                href="{% url 'basic_app:machine_learing' %}" style=" text-decoration: none;">
+                <h3>Machine Learning</h3>
+            </a></div>
+        <div class="well well-sm" style="margin-left: 27%; margin-right:35%; padding-left:2%; padding-right:2%"><a
+                href="{% url 'basic_app:machine_learing' %}" style=" text-decoration: none;">
+                <h3>C++ Tutorial</h3>
+            </a></div>
+
+        <div class="well well-sm" style="margin-left: 27%; margin-right:35%; padding-left:2%; padding-right:2%"><a
+                href="{% url 'basic_app:machine_learing' %}" style=" text-decoration: none;">
+                <h3>Python Tutorial</h3>
+            </a></div>
+        <div class="well well-sm" style="margin-left: 27%; margin-right:35%; padding-left:2%; padding-right:2%"><a
+                href="{% url 'introduction_page' %}" style=" text-decoration: none;">
+                <h3>Go To Main Project</h3>
+            </a></div>
+
+    </div>
+
+
+</body>
+
+</html>
