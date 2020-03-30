@@ -20,8 +20,9 @@
     }
 
     .column {
-        float: left;
-        width: 33.3%;
+        /*float: left;*/
+        margin: initial;
+        width: 29%;
         margin-bottom: 16px;
         padding: 0 8px;
     }
@@ -32,12 +33,12 @@
     }
 
     .about-section {
-        padding-top: 30%;
+        padding-top: 20%;
         padding-bottom: 40%;
-        
+
         text-align: center;
-        background-color: #474e5d;
-        color: white;
+        background-color: #ffffff;
+        color: rgba(77, 77, 77, 0.938);
     }
 
     .container {
@@ -49,7 +50,7 @@
         content: "";
         clear: both;
         display: table;
-        
+
     }
 
     .title {
@@ -82,52 +83,38 @@
 <div class="about-section">
     <h1>About Us </h1>
     <p style="font-family:'Roboto',sans-serif; font-size:x-large;
-    text-align: left; color: rgba(0,0,0,.84); word-spacing: 15px;text-align:center">Student of Electronics & Communication Engineering</p>
+    text-align: left; color: rgba(0,0,0,.84); word-spacing: 15px;text-align:center">Student of Electronics &
+        Communication Engineering</p>
     <p style="font-family:'Roboto',sans-serif; font-size:x-large;
-    text-align: left; color: rgba(0,0,0,.84); word-spacing: 15px;text-align:center">Indian Institute of Information Technology Una</p>
+    text-align: left; color: rgba(0,0,0,.84); word-spacing: 15px;text-align:center">Indian Institute of Information
+        Technology Una</p>
 </div>
 
 <h2 style="text-align:center; padding-top:5%">Our Team</h2>
-<div class="row" style="padding:5% ;padding-bottom:15%">
-    <div class="column">
-        <div class="card">
-            <img src="https://scontent.fslv1-2.fna.fbcdn.net/v/t1.0-9/74163967_1260283540817627_8337173683571261440_n.jpg?_nc_cat=104&_nc_sid=09cbfe&_nc_ohc=JrjndQkQVDoAX9iH3Ru&_nc_ht=scontent.fslv1-2.fna&oh=542946a1eb41bbf8bddd60044ce58abb&oe=5E9305BD" alt="Jane" style="width:100%">
-            <div class="container">
-                <h2>Anand Ranjan</h2>
-                <p class="title">CEO & Founder</p>
-                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>jane@example.com</p>
-                <p><button class="button">Contact</button></p>
-            </div>
-        </div>
-    </div>
 
-    <div class="column">
-        <div class="card">
-            <img src="https://scontent.fslv1-2.fna.fbcdn.net/v/t1.0-9/81659442_2135986609837373_8129132644643373056_n.jpg?_nc_cat=111&_nc_sid=09cbfe&_nc_ohc=GIPYf4iES1AAX8TvmDN&_nc_ht=scontent.fslv1-2.fna&oh=00b5c72452818b61e2ded795d5b00ebe&oe=5E93182F" alt="Mike" style="width:100%">
-            <div class="container">
-                <h2>Kushagra Pal</h2>
-                <p class="title">Art Director</p>
-                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>mike@example.com</p>
-                <p><button class="button">Contact</button></p>
-            </div>
-        </div>
+<div class="container" style="padding-left:30%; ;padding-right:30%;padding-top:5%;">
+    
+    <div class="card" style="width:100%; padding-top:15%">
+      <img class="card-img-top" src="/static/images/trell_image_1519122033381.jpg" alt="Card image" style="width:100%">
+      <div class="card-body" style="padding-bottom:5%;text-align:center">
+        <h3 class="card-title">Amit Yadav</h3>
+        <p class="card-text">ECE Student</p>
+        <a href="https://www.linkedin.com/in/amityv0113/" class="btn btn-primary" style="text-decoration: none;">LinkedIn</a>
+      </div>
     </div>
+    <br>
+    <div class="card" style="width:100%;padding-top:15%;margin-top:10%">
+        <img class="card-img-top" src="https://scontent.fdel25-1.fna.fbcdn.net/v/t1.0-9/74163967_1260283540817627_8337173683571261440_n.jpg?_nc_cat=104&_nc_sid=09cbfe&_nc_ohc=pmF9HNgy_2EAX9Ovusr&_nc_ht=scontent.fdel25-1.fna&oh=040ce0a320359922118c36ef0011a7ff&oe=5EA6CC3D" alt="Card image" style="width:100%">
+        <div class="card-body" style="padding-bottom:5%;text-align:center">
+          <h3 class="card-title">Anand Ranjan</h3>
+          <p class="card-text">ECE Student</p>
+          <a href="https://www.linkedin.com/in/anandranjan242/" class="btn btn-primary" style="text-decoration: none;">LinkedIn</a>
+        </div>
+      </div>
+      <br>
+    
+    
 
-    <div class="column">
-        <div class="card">
-            <img src="https://scontent.fslv1-1.fna.fbcdn.net/v/t1.0-9/p960x960/68736466_1555156671292011_3841722287766110208_o.jpg?_nc_cat=102&_nc_sid=09cbfe&_nc_ohc=KfpnqPNbSnoAX9c1BWa&_nc_ht=scontent.fslv1-1.fna&_nc_tp=6&oh=b9b7795db5c299193bead1ca7d825ce7&oe=5E8FFA7A" alt="John" style="width:100%">
-            <div class="container">
-                <h2>Amit Yadav</h2>
-                <p class="title">Designer</p>
-                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>john@example.com</p>
-                <p><button class="button">Contact</button></p>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 {% endblock %}
